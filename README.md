@@ -28,3 +28,8 @@ ollama run <model-name>
 5. **Documentation**: For more advanced usage and configuration options, refer to the [Ollama documentation](https://ollama.com/docs).
 
 By using Ollama, you can enhance your Arduino and Spring Boot project with sophisticated AI features, making it more interactive and intelligent.
+
+## Start the project and Integrate with Arduino
+- Upload the [Arduino](https://github.com/tinrupcic5/edde-robot-arduino) code to the board.
+- Start Ollama
+- Start SpringBoot app :rocket:
