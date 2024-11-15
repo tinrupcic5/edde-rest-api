@@ -19,9 +19,9 @@ spring:
 
 info:
   version: "0.0.0.1"
-  name: "bitroot [ground studio]"
-  deployed: "27.10.2024"
-  time: "03:54"
+  name: "0-bee-one [ground studio]"
+  deployed: "15.11.2024"
+  time: "11:46"
 
 ollama:
   host: http://localhost:11434 #Ollama serve locally on port 11434
@@ -32,3 +32,5 @@ logging:
   level:
     org.flywaydb: INFO
     root: info
+server:
+  port: 8888

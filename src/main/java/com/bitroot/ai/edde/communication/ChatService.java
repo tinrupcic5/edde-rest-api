@@ -7,6 +7,8 @@ import dev.langchain4j.model.ollama.OllamaStreamingChatModel;
 import dev.langchain4j.service.AiServices;
 import dev.langchain4j.service.TokenStream;
 import jakarta.annotation.PostConstruct;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,7 @@ import java.util.concurrent.CompletableFuture;
 
 @Service
 public class ChatService implements UserStreamCommunication, ModelCommunication {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ChatService.class);
 
     @Value("${ollama.host}")
     private String OLLAMA_HOST;
@@ -45,7 +48,7 @@ public class ChatService implements UserStreamCommunication, ModelCommunication 
                 .onComplete(ss -> future.complete(responseBuilder.toString()))
                 .onError(future::completeExceptionally)
                 .start();
-
+        LOGGER.info("Edde: {}" , future.join().toString());
         return future;
     }
 
